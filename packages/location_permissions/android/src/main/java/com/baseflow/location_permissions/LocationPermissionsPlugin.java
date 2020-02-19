@@ -280,8 +280,8 @@ public class LocationPermissionsPlugin implements MethodCallHandler, StreamHandl
 
   private static Boolean isLocationPermission(String permission) {
     return permission.equals(Manifest.permission.ACCESS_COARSE_LOCATION)
-            || permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)
-            || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && permission.equals(Manifest.permission.ACCESS_BACKGROUND_LOCATION));
+            || permission.equals(Manifest.permission.ACCESS_FINE_LOCATION);
+//            || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && permission.equals(Manifest.permission.ACCESS_BACKGROUND_LOCATION));
   }
 
   @PermissionStatus
@@ -307,9 +307,9 @@ public class LocationPermissionsPlugin implements MethodCallHandler, StreamHandl
       permissionNames.add(Manifest.permission.ACCESS_FINE_LOCATION);
     }
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && hasPermissionInManifest(Manifest.permission.ACCESS_BACKGROUND_LOCATION, context)) {
-      permissionNames.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
-    }
+//    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && hasPermissionInManifest(Manifest.permission.ACCESS_BACKGROUND_LOCATION, context)) {
+//      permissionNames.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+//    }
 
     return permissionNames;
   }
